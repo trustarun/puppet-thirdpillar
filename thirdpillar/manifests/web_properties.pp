@@ -1,0 +1,32 @@
+class thirdpillar::web_properties(
+	$email_host = "10.1.1.214",
+	$email_port = "25",
+	$email_userName = "tpsmail",
+	$email_password = "tpsmail",
+	$email_use_external_client = "true",
+	$email_default_from_address = "no-reply@thirdpillar.com",
+	$webapp_server_scheme = "http",
+	$webapp_server_name = "10.1.5.122",
+	$webapp_server_port = "80",
+	$webapp_server_contextpath = "loanpath-tuscany-web",
+	$webapp_server_url = "http:://10.1.5.122:80",
+	$webapp_server_baseurl = "http:://10.1.5.122:80/loanpath-tuscany-web",
+	$security_authentication_expirePasswordInDays = "90",
+	$security_authentication_maxFailedLoginAttempts = "5",
+	$application_disbursement_external_url = "http://wltwe02w.ltw-p01.chp.bankofamerica.com/LoanEx/LoanEx.DisbursementTool.Client.Dev.application?Action=SUM&ProductId=",
+	$webapp_server_portalurl = "http://loanpathoob-portal.thirdpillar.com",
+	$noia_trigger_scheduler_expression = "0 0 12 * * ? 2100",
+	$ucc_search_order_status_scheduler_expression = "0 0 21 * * ?",
+	$print_docs_scheduler_expression = "0 0 21 * * ?",
+	$hibernate_ehcache_file = "ehcache-default.xml",
+	$document_pdf_encryption_ownerPassword = "password",
+	$document_pdf_watermark_text = "E-Copy",
+	$implementation_practice_enabled = "true",
+	$default_homeUrl = "/search/request/main/results.seam",
+	)inherits thirdpillar::params {
+      file { 'codify-app-web.properties':
+        path    => "${puppet_module_path}/thirdpillar/files/codify-app-web.properties",
+        ensure  => file,
+        content => template("thirdpillar/app_web_properties.erb"),
+      }
+}

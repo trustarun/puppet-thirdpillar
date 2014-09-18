@@ -1,0 +1,45 @@
+#use this property file to configure hosts / credentials etc. i.e anything that can be configured at run time (post build).
+
+
+# Email Server configuration
+email.host=<%= @email_host %>
+email.port=<%= @email_port %>
+email.userName=<%= @email_userName %>
+email.password=<%= @email_password %>
+email.use.external.client=<%= @email_use_external_client %>
+email.default.from.address=<%= @email_default_from_address %>
+
+# Web App Server URL Properties
+webapp.server.scheme=<%= @webapp_server_scheme %>
+webapp.server.name=<%= @webapp_server_name %>
+webapp.server.port=<%= @webapp_server_port %>
+webapp.server.contextpath=<%= @webapp_server_contextpath %>
+webapp.server.url=<%= @webapp_server_url %>
+webapp.server.baseurl=<%= @webapp_server_baseurl %>
+
+
+# Security
+security.authentication.expirePasswordInDays=<%= @security_authentication_expirePasswordInDays %>
+security.authentication.maxFailedLoginAttempts=<%= @security_authentication_maxFailedLoginAttempts %>
+
+# Disbursement URL
+application.disbursement.external.url=<%= @application_disbursement_external_url %>
+
+#Customer Portal URL
+webapp.server.portalurl=<%= @webapp_server_portalurl %>
+
+noia.trigger.scheduler.expression=<%= @noia_trigger_scheduler_expression %>
+ucc.search.order.status.scheduler.expression= <%= @ucc_search_order_status_scheduler_expression %>
+print.docs.scheduler.expression=<%= @print_docs_scheduler_expression %>
+
+hibernate.ehcache.file=<%= @hibernate_ehcache_file %>
+
+# Document 
+document.pdf.encryption.ownerPassword=<%= @document_pdf_encryption_ownerPassword %>
+document.pdf.watermark.text=<%= @document_pdf_watermark_text %>
+
+# Features
+implementation.practice.enabled=<%= @implementation_practice_enabled %>
+
+# Default homeUrl
+default.homeUrl=<%= @default_homeUrl %>
