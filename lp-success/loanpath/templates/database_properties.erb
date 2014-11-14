@@ -1,0 +1,17 @@
+database.vendor=<%= @database_vendor %>
+#Database properties
+database.password=<%= @database_password %>
+database.url=<%= @database_url %>
+database.username=<%= @database_username %>
+database.driverClassName=<%= @database_driverClassName %>
+database.schema=<%= @database_schema %>
+database.hibernate.dialect=<%= @database_hibernate_dialect %>
+database.connection.datasource=<%= @database_connection_datasource %>
+database.host=<%= @database_host %>
+database.port=<%= @database_port %>
+database.name=<%= @database_name %>
+# Hibernate JTA transaction lookup class, need to change if using container JTA
+#hibernate.transaction.manager_lookup_class=org.hibernate.transaction.BTMTransactionManagerLookup
+hibernate.transaction.manager_lookup_class=<%= @hibernate_transaction_manager_lookup_class %>
+#Hibarenate Search Properties
+hibernate.search.default.indexBase=<%= @hibernate_search_default_indexBase %>

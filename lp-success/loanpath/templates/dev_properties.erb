@@ -1,0 +1,61 @@
+#this template will be used for creating dev.properties configuration files at /src/main/filters/dev.properties
+
+
+
+#database details
+database.password=<%= @db_password %>
+database.url=<%= @db_url %>
+database.username=<%= @db_username %>
+database.driverClassName=<%= @db_driver %>
+database.hibernate.dialect=<%= @db_dilect %>
+database.schema=<%= @db_schema %>
+database.connection.datasource=<%= @db_datasource %>
+database.host=<%= @db_host %>
+database.port=<%= @db_port %>
+database.name=<%= @db_name %>
+
+#Database Build properites [Required for building database]
+database.admin.username=<%= @db_admin %>
+database.admin.password=<%= @db_admin_pw %>
+database.user.tablespace=<%= @db_user_tablespace %>
+database.user.indexspace=<%= @db_user_indexspace %>
+database.user.profile=<%= @db_user_profile %>
+
+integration.xml.log.directory.path=<%= @integration_log_directory %>
+
+esb.smx.external.url=<%= @esb_smx_url %>
+brms.merlin.url=<%= @brms_merlin_url %>
+
+# Job scheduling
+noia.trigger.scheduler.expression.value=<%= @noia_trigger_scheduler_expression %>
+ucc.search.order.status.scheduler.expression.value= <%= @ucc_search_scheduler_expression %>
+print.docs.scheduler.expression.value= <%= @print_doc_scheduler_expression %>
+
+#eSigning 
+esig.register.external.host.value=<%= @esig_register_host %>
+esig.citadel.external.host.value=<%= @esig_citadel_host %>
+esig.citadel.authentication.user.value=<%= @esig_citadel_authentication %>
+esig.citadel.authentication.password.value=<%= @esig_citadel_authentication_pw %>
+
+#Hibernate Search
+hibernate.search.default.indexBase=<%= @hibernate_search_indexbase %>
+hibernate.ehcache.file.value=<%= @hibernate_ehcache_file %>
+hibernate.ehcache.multicast.host=<%= @hibernate_ehcache_host %>
+hibernate.ehcache.multicast.port=<%= @hibernate_ehcache_port %>
+
+#Email Server
+email.host.value=<%= @email_host %>
+email.port.value=<%= @email_port %>
+email.userName.value=<%= @email_username %>
+email.password.value=<%= @email_pw %>
+
+#rule-set.xml
+rule.guvnor.url.protocol.value=<%= @rule_guvnor_url_protocol %>
+rule.guvnor.url.host.value=<%= @rule_guvnor_url_host %>
+rule.guvnor.url.port.value=<%= @rule_guvnor_url_port %>
+
+# Web App Server URL Properties
+webapp.server.scheme=<%= @webapp_server_schema %>
+webapp.server.name=<%= @webapp_server_name %>
+webapp.server.port=<%= @webapp_server_port %>
+webapp.server.contextpath=<%= @webapp_context_path %>

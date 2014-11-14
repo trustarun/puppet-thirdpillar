@@ -1,0 +1,107 @@
+#general settings
+loanpath::puppet_module_path: '/etc/puppet/modules'
+loanpath::project_name: 'dauphine'
+loanpath::static_files_path: '/etc/puppet/modules/loanpath/files'
+loanpath::warfile_name: 'loanpath-tuscany-web.war'
+loanpath::war_files_path: '/etc/puppet/modules/loanpath/files'
+loanpath::deployment_timeout: '600'
+
+
+#postgresql database settings
+loanpath::postgresql_denied_users: '0.0.0.0/32'
+loanpath::postgresql_allowed_users: '0.0.0.0/0'
+loanpath::postgresql_listen_addresses: '*'
+loanpath::postgresql_password: 'tparun1529'
+
+
+
+#settings for java 
+loanpath::java_distribution: 'jdk'
+
+
+#settings for jboss
+loanpath::jboss_installation_file: 'jboss-as-7.1.1.Final.tar.gz' #the file with this name must be present in /jboss_as/files
+loanpath::jboss_user: 'jboss-as'
+loanpath::jboss_group: 'jboss-as'
+loanpath::jboss_home: '/usr/share/jboss-as'
+loanpath::jboss_staging_directory: '/tmp/puppet-staging/jboss_as'
+loanpath::jboss_standalone_template: 'jboss_as/standalone.xml.erb'
+
+
+#Database properties
+#below properties are needed to configure datasource in standalone.xml
+loanpath::datasource_jndi_name: 'java:jboss/postgresDS'
+loanpath::datasource_pool_name: 'postgresDS'
+loanpath::database_module: 'org.postgresql'
+loanpath::database_driver: 'postgresql'
+loanpath::xa_datasource_class: 'org.postgresql.xa.PGXADataSource'
+
+#below properties are used to set database.properties file of the application
+loanpath::database_vendor: 'postgres'
+loanpath::database_driverClassName: 'org.postgresql.xa.PGXADataSource'
+loanpath::database_url: 'jdbc:postgresql://localhost:5432/loanpath'
+loanpath::database_username: 'postgres'
+loanpath::database_password: 'tparun1529'
+loanpath::database_schema: 'LP_TUS_AB_CHH'
+loanpath::database_hibernate_dialect: 'org.hibernate.dialect.PostgreSQLDialect'
+loanpath::database_connection_datasource: 'java:jboss/datasources/LoanpathDS'
+loanpath::database_host: 'localhost'
+loanpath::database_port: '5432'
+loanpath::database_name: 'loanpath'
+# Hibernate JTA transaction lookup class, need to change if using container JTA
+#hibernate.transaction.manager_lookup_class: org.hibernate.transaction.BTMTransactionManagerLookup
+loanpath::hibernate_transaction_manager_lookup_class: 'com.thirdpillar.foundation.hibernate.BTMTransactionManagerLookup'
+#Hibarenate Search Properties
+loanpath::hibernate_search_default_indexBase: 'D\:\\logs\\lucene\\codify\\indexes'
+
+
+
+#app web properties
+loanpath::email_host: '10.1.1.214'
+loanpath::email_port: '25'
+loanpath::email_userName: 'tpsmail'
+loanpath::email_password: 'tpsmail'
+loanpath::email_use_external_client: 'true'
+loanpath::email_default_from_address: 'no-reply@thirdpillar.com'
+loanpath::webapp_server_scheme: '${webapp.server.scheme.value}'
+loanpath::webapp_server_name: '${webapp.server.name.value}'
+loanpath::webapp_server_port: '${webapp.server.port.value}'
+loanpath::webapp_server_contextpath: '${webapp.server.contexpath.value}'
+loanpath::webapp_server_url: 'http://127.0.0.1:8080'
+loanpath::webapp_server_baseurl: 'http://127.0.0.1:8080/loanpath-tuscany-web'
+loanpath::security_webapp: 'formlogin'
+loanpath::security_authentication_expire_password_days: '-1'
+loanpath::security_authentication_max_failed_login_attempts: '5'
+loanpath::security_webapp_siteminder_logoffurl: '/pages/logout-successful.seam'
+loanpath::application_disbursement_external_url: 'http://wltwe02w.ltw-p01.chp.bankofamerica.com/LoanEx/LoanEx.DisbursementTool.Client.Dev.application?Action=SUM&ProductId='
+loanpath::webapp_server_portalurl: 'http://loanpathoob-portal.thirdpillar.com'
+loanpath::noia_trigger_scheduler_expression: '0 0 12 * * ? 2100'
+loanpath::ucc_search_order_status_scheduler_expression: '0 0 21 * * ?'
+loanpath::print_docs_scheduler_expression: '0 0 21 * * ?'
+loanpath::hibernate_ehcache_file: 'ehcache-default.xml'
+loanpath::document_pdf_encryption_ownerPassword: 'password'
+loanpath::document_pdf_watermark_text: 'E-Copy'
+loanpath::implementation_practice_enabled: 'true'
+loanpath::default_homeUrl: '/search/request/main/results.seam'
+loanpath::date_format_pattern: 'MM/dd/yyyy'
+loanpath::datetime_format_pattern: 'MM/dd/yyyy  HH:mm a'
+
+#integration properties
+loanpath::integration_xml_log_directory_path: 'D:/logs/'
+loanpath::integration_servcie_config_locations: '/integration/config/integrationServiceConfig.xml'
+loanpath::integration_xstreamext_config_loader_class: 'com.thirdpillar.foundation.webservices.utils.CodifyXstreamExtConfigLoader'
+loanpath::integration_log_marshaler_task_data: 'true'
+loanpath::integration_log_unmarshaler_task_data:  'true'
+loanpath::integration_log_transformer_task_data: 'true'
+loanpath::integration_log_transport_task_data: 'true'
+loanpath::integration_log_validator_task_data: 'false'
+loanpath::integration_log_custom_task_data: 'true'
+loanpath::esb_smx_external_url: 'http://10.1.5.1:8192'
+loanpath::esig_register_external_host: 'http://10.1.5.93:8080'
+loanpath::esig_citadel_external_host: 'http://10.1.5.93:8080'
+loanpath::esig_citadel_authentication_user: 'citadel.client'
+loanpath::esig_citadel_authentication_password: 'tps123'
+loanpath::esb_authuser: 'esbuser'
+loanpath::esb_authpassword: 'password'
+loanpath::esig_authuser: 'amadmin'
+loanpath::esig_authpassword: 'rootroot'
